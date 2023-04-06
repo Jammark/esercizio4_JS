@@ -243,15 +243,16 @@ Usa uno più for loop per raggiungere il risultato
 Una volta fatto crea un conosle.log per controllare la proprietà length di "characters" prima e dopo l'operazione
 */
 
-console.log(characters.length);
-for(val in characters){
-  for(val1 in femaleCharacters){
-    if(val.name == val1.name){
-      characters.splice(characters.indexOf(val));
+console.log('prima: '+characters.length);
+for(var val in characters){
+  for(var val1 in femaleCharacters){
+    if(characters[val] == femaleCharacters[val1].name){
+      
+      characters.splice(val , 1);
     }
   }
 }
-console.log(characters.length);
+console.log('dopo: '+characters.length);
 
 /* EXTRA ESERCIZIO 10
 Crea una funzionalità che prenda un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo
@@ -261,4 +262,4 @@ var casual = starWarsCharacters.map(function(val){
   return val.name.length > 15;
 })[0];
 
-console.log('propietà character: nome = ${casual.name}');
+console.log('propietà character: nome = ${2}');

@@ -2,7 +2,7 @@ const starWarsCharacters = [
   {
     name: "Luke Skywalker",
     height: "172",
-    mass: "277",
+    mass: 27,
     hair_color: "blond",
     skin_color: "fair",
     eye_color: "blue",
@@ -12,7 +12,7 @@ const starWarsCharacters = [
   {
     name: "C-3PO",
     height: "167",
-    mass: "75",
+    mass: 75,
     hair_color: "n/a",
     skin_color: "gold",
     eye_color: "yellow",
@@ -22,7 +22,7 @@ const starWarsCharacters = [
   {
     name: "R2-D2",
     height: "96",
-    mass: "32",
+    mass: 32,
     hair_color: "n/a",
     skin_color: "white, blue",
     eye_color: "red",
@@ -32,7 +32,7 @@ const starWarsCharacters = [
   {
     name: "Darth Vader",
     height: "202",
-    mass: "136",
+    mass: 13,
     hair_color: "none",
     skin_color: "white",
     eye_color: "yellow",
@@ -42,7 +42,7 @@ const starWarsCharacters = [
   {
     name: "Leia Organa",
     height: "150",
-    mass: "49",
+    mass: 49,
     hair_color: "brown",
     skin_color: "light",
     eye_color: "brown",
@@ -52,7 +52,7 @@ const starWarsCharacters = [
   {
     name: "Owen Lars",
     height: "178",
-    mass: "120",
+    mass: 12,
     hair_color: "brown, grey",
     skin_color: "light",
     eye_color: "blue",
@@ -62,7 +62,7 @@ const starWarsCharacters = [
   {
     name: "Beru Whitesun lars",
     height: "165",
-    mass: "75",
+    mass: 75,
     hair_color: "brown",
     skin_color: "light",
     eye_color: "blue",
@@ -72,7 +72,7 @@ const starWarsCharacters = [
   {
     name: "R5-D4",
     height: "97",
-    mass: "32",
+    mass: 32,
     hair_color: "n/a",
     skin_color: "white, red",
     eye_color: "red",
@@ -82,7 +82,7 @@ const starWarsCharacters = [
   {
     name: "Biggs Darklighter",
     height: "183",
-    mass: "84",
+    mass: 84,
     hair_color: "black",
     skin_color: "light",
     eye_color: "brown",
@@ -92,7 +92,7 @@ const starWarsCharacters = [
   {
     name: "Obi-Wan Kenobi",
     height: "182",
-    mass: "77",
+    mass: 77,
     hair_color: "auburn, white",
     skin_color: "fair",
     eye_color: "blue-gray",
@@ -205,15 +205,17 @@ switch(true){
   case totale == 500:
       console.log('Ship is half loaded');
   break;
+  case totale > 1000:
+    console.log('DANGER! OVERLOAD ALERT: Jump ship now!');
+  break;
+  case totale > 900:
+    console.log('Critical Load: Over 900');
+  break;
   case totale > 700:
     console.log('Warning: Load is over 700');
   break;
-  case total > 900:
-    console.log('Critical Load: Over 900');
-  break;
-  case total > 1000:
-    console.log('DANGER! OVERLOAD ALERT: Jump ship now!');
-  break;
+ 
+  
 }
 
 /* ESERCIZIO 8
@@ -226,7 +228,9 @@ starWarsCharacters.filter(function(val){
   val.gender = "robot";
 });
 
-console.log("gender: " + starWarsCharacters);
+console.log("gender: " + starWarsCharacters.map(function(val){
+  return val.gender + ', ';
+}));
 /* EXTRA ESERCIZIO 9
 
 Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "characters" le stringhe corrispondenti a personaggi con lo stesso nome"
